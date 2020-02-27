@@ -1,0 +1,60 @@
+export   const defaultTheme = { 
+    frontColor: 'rgb(39,147,179)',
+    frontColorSecondary: 'rgb(21,170,165)',
+    frontGradient: 'linear-gradient(0deg, rgba(39,147,179,1) 0%, rgba(21,170,165,1) 90%)',
+    frontTitle: '#f2e81d',
+    frontSubtitle: 'white',
+    aboutColor: 'rgb(255,217,0)',
+    aboutGradient: 'linear-gradient(0deg, rgba(233,155,28,1) 0%, rgba(255,217,0,1) 90%)',
+    skillColor: 'rgb(242,48,132)',
+    skillGradient: 'linear-gradient(0deg, rgba(233,28,214,1) 0%, rgba(242,48,132,1) 90%)',
+    contactColor: 'rgb(136,242,61)',
+    contactGradient: 'linear-gradient(0deg, rgba(228,233,28,1) 0%, rgba(136,242,61,1) 90%)',
+    projectColor: 'rgb(155,61,242)',
+    projectGradient: 'linear-gradient(0deg, rgba(79,10,230,1) 0%, rgba(155,61,242,1) 90%)',
+    navPrimary: '#012',
+    navSecondary: 'white',
+    buttonFilter: 'brightness(45%) sepia(100%) hue-rotate(150deg) saturate(200%)',
+    mediaColor: 'white',
+    portraitFilter: 'grayscale(100%) sepia(40%) brightness(110%)'
+  }
+
+  export   const pastelTheme = { 
+    frontColor: 'rgb(128,210,193)',
+    frontGradient: 'linear-gradient(0deg, rgba(128,210,193,1) 0%, rgba(134,190,215,1) 90%)',
+    frontTitle: '#fff9d4',
+    frontSubtitle: 'white',
+    aboutColor: '#daffbb',
+    aboutGradient: 'linear-gradient(0deg, rgba(255,255,149,1) 0%, rgba(218,255,187,1) 90%)',
+    skillColor: '#72a2cc',
+    skillGradient: 'linear-gradient(0deg, rgba(98,138,213,1) 0%, rgba(114,162,204,1) 90%)',
+    contactColor: '#daffbb',
+    contactGradient: 'linear-gradient(0deg, rgba(255,255,149,1) 0%, rgba(218,255,187,1) 90%)',
+    projectColor: '#72a2cc',
+    projectGradient: 'linear-gradient(0deg, rgba(98,138,213,1) 0%, rgba(114,162,204,1) 90%)',
+    navPrimary: '#475963',
+    navSecondary: 'white',
+    buttonFilter: 'brightness(60%) sepia(100%) hue-rotate(120deg) saturate(85%)',
+    mediaColor: 'white',
+    portraitFilter: 'grayscale(70%) brightness(110%)'
+  }
+
+  export   const colorlessTheme = { 
+    frontColor: 'rgb(195,195,195)',
+    frontGradient: 'linear-gradient(0deg, rgba(195,195,195,1) 0%, rgba(255,255,255,1) 90%)',
+    frontTitle: 'black',
+    frontSubtitle: '#363636',
+    aboutColor: 'rgb(140,140,140)',
+    aboutGradient: 'linear-gradient(0deg, rgba(187,187,187,1) 0%, rgba(140,140,140,1) 90%)',
+    skillColor: 'rgb(73,73,73)',
+    skillGradient: 'linear-gradient(0deg, rgba(110,110,110,1) 0%, rgba(73,73,73,1) 90%)',
+    contactColor: 'rgb(140,140,140)',
+    contactGradient: 'linear-gradient(0deg, rgba(187,187,187,1) 0%, rgba(140,140,140,1) 90%)',
+    projectColor: 'rgb(73,73,73)',
+    projectGradient: 'linear-gradient(0deg, rgba(110,110,110,1) 0%, rgba(73,73,73,1) 90%)',
+    navPrimary: 'black',
+    navSecondary: 'white',
+    buttonFilter: 'brightness(70%)',
+    mediaColor: '#333',
+    portraitFilter: 'grayscale(100%)'
+  }
