@@ -89,7 +89,7 @@ export const GlobalStyles = createGlobalStyle`
     height: 70px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 90px;
+    margin-top: 110px;
     margin-bottom: 0;
     background-color: rgba(50, 50, 50, 0.2);
     font-family: 'Wellfleet', sans-serif;
@@ -99,21 +99,44 @@ export const GlobalStyles = createGlobalStyle`
     padding-left: 20px;
   }
 
+  .content_title ul {
+    list-style-type: none;
+  }
+
+  .content_title li {
+    display: inline;
+    padding-right: 10px;
+  }
+
   .content_title h1 {
     padding-top: 5px;
     margin-bottom: 0;
     color: rgba(0, 0, 0, 0.3);
-    font-size: 50px;
+    font-size: 50px;    
+  }
+
+  .content_title a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .content_title a:hover {
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .content_title h1:hover {
+    color: rgba(0, 0, 0, 0.8);
   }
 
   .content {
     width: 90%;
-    margin: 0 auto 0 auto;
+    font-size: 16px;
+    margin: 0 auto 20px auto;
     max-width: 1200px;
     background-color: rgba(0, 0, 0, 0.2);
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    color: ${({ theme }) => theme.navSecondary};
+    color: ${({ theme }) => theme.contentText};
     padding: 20px 60px 40px 60px;
     text-align: left;
     font-family: 'BenchNine', sans-serif;
@@ -123,8 +146,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.aboutColor};
     background: ${({ theme }) => theme.aboutGradient};
     width: 100%;
-    height: 100%;
-    min-height: 1000px;
+    min-height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -135,8 +157,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.skillColor};
     background: ${({ theme }) => theme.skillGradient};
     width: 100%;
-    height: 100%;
-    min-height: 1000px;
+    min-height: 100%;
     padding-bottom: 20px;
     position: absolute;
     top: 0;
@@ -148,8 +169,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.contactColor};
     background: ${({ theme }) => theme.contactGradient};
     width: 100%;
-    height: 100%;
-    min-height: 1000px;
+    min-height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -160,8 +180,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.projectColor};
     background: ${({ theme }) => theme.projectGradient};
     width: 100%;
-    height: 100%;
-    min-height: 1000px;
+    min-height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -170,7 +189,6 @@ export const GlobalStyles = createGlobalStyle`
   
   .front_page_left {
     width: 75%;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -398,7 +416,7 @@ export const GlobalStyles = createGlobalStyle`
       top: 78px;
     }
     .content_title {
-      margin-top: 100px;
+      margin-top: 135px;
     }
     .navigation {
       height: 78px;
@@ -442,7 +460,7 @@ export const GlobalStyles = createGlobalStyle`
       height: 52px;
     }
     .content_title {
-      margin-top: 80px;
+      margin-top: 110px;
     }
     .navigation ul {
       left: 10%;

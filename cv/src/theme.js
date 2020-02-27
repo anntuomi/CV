@@ -16,7 +16,8 @@ export   const defaultTheme = {
     navSecondary: 'white',
     buttonFilter: 'brightness(45%) sepia(100%) hue-rotate(150deg) saturate(200%)',
     mediaColor: 'white',
-    portraitFilter: 'grayscale(100%) sepia(40%) brightness(110%)'
+    portraitFilter: 'grayscale(100%) sepia(40%) brightness(110%)',
+    contentText: 'white'
   }
 
   export   const pastelTheme = { 
@@ -36,7 +37,8 @@ export   const defaultTheme = {
     navSecondary: 'white',
     buttonFilter: 'brightness(60%) sepia(100%) hue-rotate(120deg) saturate(85%)',
     mediaColor: 'white',
-    portraitFilter: 'grayscale(70%) brightness(110%)'
+    portraitFilter: 'grayscale(70%) brightness(110%)',
+    contentText: '#234'
   }
 
   export   const colorlessTheme = { 
@@ -44,17 +46,18 @@ export   const defaultTheme = {
     frontGradient: 'linear-gradient(0deg, rgba(195,195,195,1) 0%, rgba(255,255,255,1) 90%)',
     frontTitle: 'black',
     frontSubtitle: '#363636',
-    aboutColor: 'rgb(140,140,140)',
-    aboutGradient: 'linear-gradient(0deg, rgba(187,187,187,1) 0%, rgba(140,140,140,1) 90%)',
-    skillColor: 'rgb(73,73,73)',
-    skillGradient: 'linear-gradient(0deg, rgba(110,110,110,1) 0%, rgba(73,73,73,1) 90%)',
-    contactColor: 'rgb(140,140,140)',
-    contactGradient: 'linear-gradient(0deg, rgba(187,187,187,1) 0%, rgba(140,140,140,1) 90%)',
-    projectColor: 'rgb(73,73,73)',
-    projectGradient: 'linear-gradient(0deg, rgba(110,110,110,1) 0%, rgba(73,73,73,1) 90%)',
+    aboutColor: 'rgb(195,195,195)',
+    aboutGradient: 'linear-gradient(0deg, rgba(195,195,195,1) 0%, rgba(255,255,255,1) 90%)',
+    skillColor: 'rgb(195,195,195)',
+    skillGradient: 'linear-gradient(0deg, rgba(195,195,195,1) 0%, rgba(255,255,255,1) 90%)',
+    contactColor: 'rgb(195,195,195)',
+    contactGradient: 'linear-gradient(0deg, rgba(195,195,195,1) 0%, rgba(255,255,255,1) 90%)',
+    projectColor: 'rgb(195,195,195)',
+    projectGradient: 'linear-gradient(0deg, rgba(195,195,195,1) 0%, rgba(255,255,255,1) 90%)',
     navPrimary: 'black',
     navSecondary: 'white',
     buttonFilter: 'brightness(70%)',
     mediaColor: '#333',
-    portraitFilter: 'grayscale(100%)'
+    portraitFilter: 'grayscale(100%)',
+    contentText: 'black'
   }

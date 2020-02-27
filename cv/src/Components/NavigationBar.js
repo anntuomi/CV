@@ -21,6 +21,7 @@ const NavigationButton = (props) => {
   const NavigationBar = (props) => {
     return (
       <>
+    <ThemeMenu activateTheme={props.activateTheme} />
       <div className="navigation">
       <HomeButton exact path='/' />
       <ul>
@@ -30,7 +31,6 @@ const NavigationButton = (props) => {
         <NavigationButton path='/projects' name = 'purple' active = {props.active} label='Projects'/>
       </ul>
     </div>
-        <ThemeMenu activateTheme={props.activateTheme} />
       </>
     )
   }

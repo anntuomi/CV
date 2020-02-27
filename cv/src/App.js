@@ -41,10 +41,10 @@ const App = () => {
         <GlobalStyles />
           <Router>
               <Route exact path="/" render={() => <FrontPage activateTheme={activateTheme}/>} />
-              <Route exact path="/about" render={() => <AboutPage activateTheme={activateTheme}/>} />
-              <Route exact path="/skills" render={() => <SkillPage activateTheme={activateTheme}/>} />
-              <Route exact path="/contact" render={() => <ContactPage activateTheme={activateTheme}/>} />
-              <Route exact path="/projects" render={() => <ProjectPage activateTheme={activateTheme}/>} />
+              <Route path="/about" render={() => <AboutPage activateTheme={activateTheme}/>} />
+              <Route path="/skills" render={() => <SkillPage activateTheme={activateTheme}/>} />
+              <Route path="/contact" render={() => <ContactPage activateTheme={activateTheme}/>} />
+              <Route path="/projects" render={() => <ProjectPage activateTheme={activateTheme}/>} />
           </Router>
           </>
       </ThemeProvider>
