@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import NavigationBar from './NavigationBar';
 import MediaButtons from './MediaButtons';
+import { PageTransition } from './PageTransition'
 
 const ProjectPage = (props) => {
     return (
-      <div className="project_page">
-           <NavigationBar active='purple' activateTheme={props.activateTheme}/>
+      <PageTransition>
+      <div className="page">
+           <div className="content_title_project">
            <div className="content_title"><h1>Projects</h1></div>
+           </div>
            <div className="content">
               <h1>Anna</h1>
               <h1>Tuominen</h1>
@@ -18,6 +20,7 @@ const ProjectPage = (props) => {
               <MediaButtons />
           </div>
       </div>
+      </PageTransition>
     )
   }
 

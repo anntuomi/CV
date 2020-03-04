@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import atuomine from './atuomine.jpg';
-import NavigationBar from './NavigationBar';
 import MediaButtons from './MediaButtons';
+import { PageTransition } from './PageTransition';
+import styled, { keyframes } from 'styled-components';
+
 
 const FrontPage = (props) => {
     return (
+      <PageTransition>
       <div className="front_page">
-        <NavigationBar active='blue' activateTheme={props.activateTheme}/>
         <div className="front_page_content">
             <img src={atuomine} className="front_page_left_img" alt='Portrait' />
             <h1>Anna</h1>
@@ -15,6 +17,7 @@ const FrontPage = (props) => {
             <MediaButtons />
         </div>
       </div>
+      </PageTransition>
     )
   }
 

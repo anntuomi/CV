@@ -1,18 +1,13 @@
-import React, { useState } from 'react'
-import NavigationBar from './NavigationBar';
-import MediaButtons from './MediaButtons';
+import React from 'react'
+import { PageTransition } from './PageTransition'
 import {
-  BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams
+  NavLink
 } from "react-router-dom";
 
 const AboutNavButton = (props) => {
   return (
-  <li><Link to={props.path}>{props.label}</Link></li>
+  <li><NavLink to={props.path} activeClassName="active">{props.label}</NavLink></li>
   )
 }
 
@@ -84,16 +79,20 @@ const AboutEducation = (props) => {
 
 const AboutPage = (props) => {
     return (
-      <div className="about_page">
-           <NavigationBar active='yellow' activateTheme={props.activateTheme}/>
-           <div className="content_title">
-             <Link to='/about'><h1>About</h1></Link>
-             <AboutNavigation />
+      <PageTransition>
+      <div className="page">
+           <div className="content_title_about">
+              <div className="content_title">
+                <NavLink exact to='/about' activeClassName="active"><h1>About</h1></NavLink>
+                <AboutNavigation />
+              </div>
            </div>
-           <Route exact path="/about" component={AboutFront} />
-           <Route exact path="/about/work" component={AboutWork} />
-           <Route exact path="/about/education" component={AboutEducation} />
+          
+              <Route exact path="/about" component={AboutFront} />
+              <Route exact path="/about/work" component={AboutWork} />
+              <Route exact path="/about/education" component={AboutEducation} />
       </div>
+      </PageTransition>
     )
   }
 

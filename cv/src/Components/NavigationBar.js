@@ -2,26 +2,26 @@ import React, { useState } from 'react'
 import ThemeMenu from './ThemeMenu'
 import {
     BrowserRouter as Router,
-    Route, Link, Redirect, withRouter
+    Route, NavLink, Redirect, withRouter
   } from 'react-router-dom'
 
 const NavigationButton = (props) => {
-    const buttonClass = (props.name === props.active ? props.name.concat('_active') : props.name)
+    const activeName = props.name.concat('_active')
     return (
-    <li><Link to={props.path} className = {buttonClass}>{props.label}</Link></li>
+    <li><NavLink to={props.path} className={props.name} activeClassName={activeName}>{props.label}</NavLink></li>
     )
   }
   
   const HomeButton = (props) => {
     return (
-    <Link to={props.path} className ="home"><i className="fa fa-home"></i></Link>
+    <NavLink to={props.path} className ="home">Home</NavLink>
     )
   }
   
   const NavigationBar = (props) => {
     return (
       <>
-    <ThemeMenu activateTheme={props.activateTheme} />
+      <ThemeMenu activateTheme={props.activateTheme} />
       <div className="navigation">
       <HomeButton exact path='/' />
       <ul>
