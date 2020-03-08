@@ -8,22 +8,31 @@ import SkillPage from './Components/SkillPage';
 import ContactPage from './Components/ContactPage';
 import ProjectPage from './Components/ProjectPage';
 import NavigationBar from './Components/NavigationBar';
+import NavigationMobile from './Components/NavigationMobile';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled from 'styled-components'
 import {
     BrowserRouter,
-    Route, Switch,
-    useLocation
+    Route, Switch
   } from 'react-router-dom';
 
   const PageContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  top: 0;
   left: 0;
   background-color: red;
 `;
+
+const Navigation = (props) => {
+  if (props.width < 800)
+  return (
+      <NavigationMobile activateTheme={props.activateTheme} />
+  )
+  return (
+    <NavigationBar activateTheme={props.activateTheme} />
+)
+}
 
 const App = () => {
     const [theme, setTheme] = useState('default');
@@ -36,9 +45,23 @@ const App = () => {
         setTheme('colorless')
       }
     }
+    function useWindowSize() {
+      const [size, setSize] = useState([0, 0]);
+      useLayoutEffect(() => {
+        function updateSize() {
+          setSize([window.innerWidth, window.innerHeight]);
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+      }, []);
+      return size;
+    }
+
+    const dimensions = useWindowSize();
     const size = {
-      height: window.innerHeight,
-      width: window.innerWidth
+      height: dimensions[1],
+      width: dimensions[0]
     }
       let selectedTheme = defaultTheme;
       switch(theme) {
@@ -55,8 +78,9 @@ const App = () => {
     return (
       <ThemeProvider theme={selectedTheme}>
       <>
-        <GlobalStyles />
+        <GlobalStyles size={size}/>
           <BrowserRouter>
+          <Route path="/" render={() => <Navigation activateTheme={ activateTheme } width={ size.width } />} />
           <Route render={({ location }) => {
             var pathname = location.pathname;
             var key = pathname.split('/')[1] || 'root';
@@ -82,7 +106,6 @@ const App = () => {
               )
               }} 
               />
-              <Route path="/" render={() => <NavigationBar activateTheme={ activateTheme } />} />
           </BrowserRouter>
           </>
       </ThemeProvider>

@@ -13,11 +13,30 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100%;
   }
 
+  .hamburger_menu {
+    position: absolute;
+    z-index: +5;
+    margin: 2px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    right: 10px;
+    top: 10px;
+    background-color: ${({ theme }) => theme.navPrimary};
+    color: ${({ theme }) => theme.navSecondary};
+    font-size: 20px;
+  }
+
+  .hamburger_menu:hover {
+    background: ${({ theme }) => theme.skillColor};
+  }
+
   .theme_menu {
     position: absolute;
     z-index: +1;
-    top: 0px;
-    left: 91%;
+    top: 50px;
+    right: 34px;
     text-align: center;
     background-color: ${({ theme }) => theme.navPrimary};
     padding: 5px 2px 5px 2px;
@@ -30,7 +49,11 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
-  .theme_menu button {
+  .theme_menu_button {
+    position: absolute;
+    z-index: +1;
+    top: 10px;
+    right: 30px;
     color: rgba(0, 0, 0, 0);
     text-decoration: none;
     color: rgba(0, 0, 0, 0)
@@ -45,33 +68,33 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 12px;
   }
   
-  .theme_menu button b {
+  .theme_menu_button b {
     color: ${({ theme }) => theme.frontColor};
   }
 
-  .theme_menu button.menu {
+  .theme_menu_button.menu {
       border-radius: 50%;
       width: 30px;
       height: 30px;
       background: linear-gradient(270deg, rgba(255,0,0,1) 0%, rgba(255,163,10,1) 18%, rgba(254,255,20,1) 37%, rgba(65,253,36,1) 60%, rgba(54,163,212,1) 81%, rgba(149,69,252,1) 100%);
   }
-  .theme_menu button.default {
+  .theme_menu_button.default {
     background: linear-gradient(0deg, rgba(255,224,13,1) 0%, rgba(255,0,125,1) 21%, rgba(0,159,255,1) 46%, rgba(66,255,183,1) 70%, rgba(139,0,255,1) 103%);
   }
 
-  .theme_menu button.default:hover {
+  .theme_menu_button.default:hover {
     background: radial-gradient(circle, rgba(0,159,255,1) 0%, rgba(139,0,255,1) 20%, rgba(255,0,125,1) 54%, rgba(255,224,13,1) 78%, rgba(66,255,183,1) 100%);
 }
-.theme_menu button.pastel {
+.theme_menu_button.pastel {
   background: linear-gradient(0deg, rgba(155,217,255,1) 0%, rgba(215,255,182,1) 100%);
 }
-.theme_menu button.pastel:hover {
+.theme_menu_button.pastel:hover {
   background: radial-gradient(circle, rgba(155,217,255,1) 0%, rgba(215,255,182,1) 100%);
 }
-.theme_menu button.colorless {
+.theme_menu_button.colorless {
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
 }
-.theme_menu button.colorless:hover {
+.theme_menu_button.colorless:hover {
   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
 }
 
@@ -80,12 +103,13 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.frontGradient};
     position: absolute;
     width: 100%;
-    min-height: calc(${window.innerHeight}px - 10px);
+    min-height: calc(${props => props.size.height}px - 60px);
     top: 0;
     left: 0;
     text-align: center;
     z-index: -1;
-    padding-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 20px;
   }
 
   .page {
@@ -93,8 +117,6 @@ export const GlobalStyles = createGlobalStyle`
     position: absolute;
     top: 0;
     left: 0;
-    text-align: center;
-    z-index: -1;
   }
   
   .content_title_about {
@@ -169,7 +191,7 @@ export const GlobalStyles = createGlobalStyle`
     width: 90%;
     font-size: 1em;
     margin: 0 auto 20px auto;
-    max-width: 1200px;
+    max-width: 1000px;
     color: ${({ theme }) => theme.contentText};
     padding: 20px 60px 40px 60px;
     text-align: left;
@@ -220,11 +242,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.navPrimary};
     justify-content: left;
     overflow: hidden;
-    margin: 0 auto 20px auto;
     padding: 0;
-    position: absolute;
-    top: 0%;
-    left: 0%;
   }
   
   .navigation ul {
@@ -232,7 +250,7 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     padding: 0;
     width: 60%;
-    height: 100%;
+    height: 50px;
     margin: 0px auto 0px auto;
     position: absolute;
     left: 20%;
@@ -241,12 +259,117 @@ export const GlobalStyles = createGlobalStyle`
   .navigation li {
     width: 25%;
     display: flex;
-    height: 100%;
+    height: 50px;
+  }
+
+  .navigation_mobile {
+    font-family: 'Wellfleet', sans-serif;
+    width: 100%;
+    height: 200px;
+    background-color: ${({ theme }) => theme.navPrimary};
+    color: ${({ theme }) => theme.navSecondary};
+    text-align: center;
+    margin: 0;
   }
   
+  .navigation_mobile ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+  }
+  
+  .navigation_mobile li {
+    display: block;
+    height: 20%;
+  }
+  
+  .navigation_mobile a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: ${({ theme }) => theme.navSecondary};
+  }
+
+  .navigation_mobile a.blue {
+    border-color: ${({ theme }) => theme.frontColor};
+    color: ${({ theme }) => theme.navSecondary};
+  }
+
+  .navigation_mobile a.yellow {
+    border-color: ${({ theme }) => theme.aboutColor};
+  }
+  
+  .navigation_mobile a.pink {
+    border-color: ${({ theme }) => theme.skillColor};
+  }
+  
+  .navigation_mobile a.green {
+    border-color: ${({ theme }) => theme.contactColor};
+  }
+  
+  .navigation_mobile a.purple {
+    border-color: ${({ theme }) => theme.projectColor};
+  }
+
+  .navigation_mobile a.blue:hover {
+    background-color: ${({ theme }) => theme.frontColor};
+    border-color: ${({ theme }) => theme.frontColor};
+  }
+
+  .navigation_mobile a.yellow:hover {
+    background-color: ${({ theme }) => theme.aboutColor};
+    color: ${({ theme }) => theme.navPrimary};
+    border-color: ${({ theme }) => theme.aboutColor};
+  }
+  
+  .navigation_mobile a.pink:hover {
+    background-color: ${({ theme }) => theme.skillColor};
+    border-color: ${({ theme }) => theme.skillColor};
+  }
+  
+  .navigation_mobile a.green:hover {
+    background-color: ${({ theme }) => theme.contactColor};
+    border-color: ${({ theme }) => theme.contactColor};
+    color: ${({ theme }) => theme.navPrimary};
+  }
+  
+  .navigation_mobile a.purple:hover {
+    background-color: ${({ theme }) => theme.projectColor};
+    border-color: ${({ theme }) => theme.projectColor};
+  }
+  
+  .navigation_mobile a.yellow_active {
+    background-color: ${({ theme }) => theme.aboutColor};
+    color: ${({ theme }) => theme.navPrimary};
+    border-color: ${({ theme }) => theme.aboutColor};
+  }
+  
+  .navigation_mobile a.blue_active {
+    border-color: ${({ theme }) => theme.frontColor};
+    background-color: ${({ theme }) => theme.frontColor};
+  }
+
+  .navigation_mobile a.pink_active {
+    background-color: ${({ theme }) => theme.skillColor};
+    border-color: ${({ theme }) => theme.skillColor};
+  }
+  
+  .navigation_mobile a.green_active {
+    background-color: ${({ theme }) => theme.contactColor};
+    color: ${({ theme }) => theme.navPrimary};
+    border-color: ${({ theme }) => theme.contactColor};
+  }
+  
+  .navigation_mobile a.purple_active {
+    background-color: ${({ theme }) => theme.projectColor};
+    border-color: ${({ theme }) => theme.projectColor};
+  }
+
   .navigation a.home {
     width: 10%;
-    height: 100%;
+    height: 50px;
     position: absolute;
     left: 2%;
     border-color: ${({ theme }) => theme.frontColor};
@@ -378,7 +501,7 @@ export const GlobalStyles = createGlobalStyle`
   
   @media screen and (min-width: 1200px) {
     .front_page {
-      min-height: 750px;
+      min-height: calc(${props => props.size.height}px - 80px);
     }
     .front_page h1 {
       font-size: 54px;
@@ -387,7 +510,10 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 30px;
     }
     .theme_menu {
-      padding-top: 10px;
+      padding-top: 20px;
+    }
+    .theme_menu_button {
+      top: 15px;
     }
     .content_title {
       margin-top: 0;
@@ -395,15 +521,20 @@ export const GlobalStyles = createGlobalStyle`
     .navigation {
       height: 60px;
     }
+    .navigation a.home {
+      height: 60px;
+    }
     .navigation ul {
       width: 50%;
       left: 25%;
+      height: 60px;
     }
     .navigation a {
       font-size: 20px;
       border-bottom-width: 6px;
       border-top-width: 6px;
       padding-top: 15px;
+      height: 60px;
     }
     .front_page_content {
       margin-top: 50px;
@@ -412,19 +543,21 @@ export const GlobalStyles = createGlobalStyle`
   
   @media screen and (max-width: 800px) {
     .theme_menu {
-      left: 91%;
-      top: 0px;
-      padding-top: 10px;
+      right: 66px;
+      top: 20px;
+      padding: 10px 0 0 0;
+      border-top-right-radius: 50px;
+      border-top-left-radius: 50px;
     }
-    .theme_menu button {
-      width: 25px;
-      height: 25px;
+    .theme_menu_button {
+      right: 60px;
+      top: 10px;
+      border-color: ${({ theme }) => theme.navPrimary};
+      z-index: +2;
     }
-    .theme_menu button.menu {
-      width: 25px;
-      height: 25px;
-  }
-
+    .front_page {
+      min-height: calc(${props => props.size.height}px - 15px);
+    }
     .front_page h1 {
       font-size: 32px;
     }
@@ -434,25 +567,27 @@ export const GlobalStyles = createGlobalStyle`
     .front_page_content {
       margin-top: 30px;
     }
-    .navigation {
-      height: 52px;
-    }
     .content_title {
       margin-top: 0;
+      width: 100%;
+      padding: 5px 10px 5px;
+      flex-direction: column;
     }
-    .navigation ul {
-      left: 10%;
-      height: 52px;
-      width: 80%;
+    .content_title h1 {
+      margin-bottom: -10px; 
+      margin-top: 0;   
     }
-    .navigation a.home {
-      left: 0%;
+    .content_title ul {
+        padding: 0;
     }
-    .navigation a {
-      font-size: 16px;
-      border-bottom-width: 4px;
-      border-top-width: 4px;
-      padding-top: 16px;
+    .content_title li {
+      display: block;
+      padding: 0;
+    }
+    .content {
+      width: 100%;
+      margin: 0 auto 10px auto;
+      padding: 20px;
     }
   }
   `;
